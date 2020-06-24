@@ -22,7 +22,7 @@ for user in Users:
         user_dict = {}
         user_count = 1
         for status in tweepy.Cursor(api.user_timeline, screen_name=user, tweet_mode='extended').items(1000):
-                # Process a single status # print(status.full_text) # print(json.dumps(status._json))
+                # Process a single status 
                 user_dict[user_count] = json.dumps(status.full_text)
                 user_count += 1
         with open(file, 'a+') as f:
